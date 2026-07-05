@@ -1,0 +1,39 @@
+**Report**
+```markdown
+# BERT Training on Twitter Sentiment Dataset with PyQt GUI
+
+## 1. Introduction
+This assignment focuses on building a Twitter sentiment analysis system using a trained BERT model. The goal of the project is to classify tweets or manually entered text as Positive or Negative. A PyQt desktop GUI was developed so that the trained model can be used through a simple graphical interface.
+
+The project follows the complete machine learning workflow: dataset cleaning, label conversion, model training, evaluation, model saving, model loading, and GUI-based prediction.
+
+## 2. Dataset Description
+The dataset used in this project is a Twitter sentiment dataset in CSV format. The important columns used from the dataset are `text` and `polarity`.
+
+The `text` column contains the tweet, while the `polarity` column contains the sentiment label. The original labels were converted into binary labels for training.
+
+| Original Polarity | Converted Label | Sentiment |
+|---|---|---|
+| 0 | 0 | Negative |
+| 4 | 1 | Positive |
+
+A balanced dataset was created by selecting an equal number of positive and negative tweets. This helps reduce model bias toward one class.
+
+## 3. Dataset Preprocessing
+The dataset preprocessing included the following steps:
+
+- Loaded the CSV dataset using pandas
+- Selected only useful columns
+- Removed missing text values
+- Converted polarity labels into numeric labels
+- Balanced the dataset
+- Saved the cleaned dataset as `twitter_sentiment_clean.csv`
+- Generated a class distribution graph
+
+The final cleaned dataset contained both Positive and Negative sentiment classes.
+
+## 4. Model Details
+The model used for training was:
+
+```text
+bert-base-uncased
